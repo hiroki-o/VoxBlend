@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Name: BlendShapeControllerPlayableClip
   m_EditorClassIdentifier: 
   template:
-    bindValue01: 0.04446411
+    bindValue01: 0.5280762
     bindValue02: 0
     bindValue03: 0
     bindValue04: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   template:
     bindValue01: 0
     bindValue02: 0
-    bindValue03: 0.96205866
+    bindValue03: 1
     bindValue04: 0
     bindValue05: 0
     bindValue06: 0
@@ -1156,7 +1156,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: SmileTwice
     m_Version: 1
-  - m_Start: 9.333333333333334
+  - m_Start: 8.866666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 114793920442712910}
     m_Duration: 2.466666666666667
@@ -1164,53 +1164,17 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 114820981908286796}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.5333333333333332
-    m_BlendOutDuration: 0.4666666666666668
+    m_BlendInDuration: 0.466666666666665
+    m_BlendOutDuration: 0.7333333333333343
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1225,7 +1189,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Confused
     m_Version: 1
-  - m_Start: 7.233333333333333
+  - m_Start: 6.7
     m_ClipIn: 2.366666666666667
     m_Asset: {fileID: 114390285020106536}
     m_Duration: 2.633333333333333
@@ -1234,7 +1198,7 @@ MonoBehaviour:
     m_EaseInDuration: 1
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 0.5333333333333332
+    m_BlendOutDuration: 0.466666666666665
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -1261,25 +1225,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1291,7 +1237,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 1.3166666666666664
+    m_PreExtrapolationTime: 0.7833333333333332
     m_DisplayName: Angry
     m_Version: 1
   - m_Start: 3.55
@@ -1306,25 +1252,7 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1359,11 +1287,11 @@ MonoBehaviour:
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 1.3166666666666664
+    m_PostExtrapolationTime: 0.7833333333333332
     m_PreExtrapolationTime: 0
     m_DisplayName: Angry
     m_Version: 1
-  - m_Start: 11.333333333333334
+  - m_Start: 10.6
     m_ClipIn: 0
     m_Asset: {fileID: 114440069069401250}
     m_Duration: 5
@@ -1371,29 +1299,11 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 114820981908286796}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 0.4666666666666668
+    m_BlendInDuration: 0.7333333333333343
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

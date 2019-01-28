@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Vox.Blend
 {
@@ -10,12 +11,14 @@ namespace Vox.Blend
         [Serializable]
         public struct BlendShapeMapBinding
         {
-            public int axisIndex;
+            public bool enabled;
+            public int setIndex;
             public string inputAxis;
 
-            public BlendShapeMapBinding(int index = -1, string input = "")
+            public BlendShapeMapBinding(bool e = false, int index = -1, string input = "")
             {
-                axisIndex = index;
+                enabled = e;
+                setIndex = index;
                 inputAxis = input;
             }
         } 
@@ -33,34 +36,39 @@ namespace Vox.Blend
         [SerializeField] private BlendShapeMapBinding m_binding08 = new BlendShapeMapBinding();
 
         private BlendShapeRuntimeControl m_runtimeControl;
-        private List<BlendShapeMapBinding> m_bindings;
 
         private void Start()
         {
             m_runtimeControl = new BlendShapeRuntimeControl(gameObject, m_controlMap, m_ensureMeshNameMatch);
-
-            m_bindings = new List<BlendShapeMapBinding>();
-            if (m_binding01.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding01.inputAxis)) m_bindings.Add(m_binding01);
-            if (m_binding02.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding02.inputAxis)) m_bindings.Add(m_binding02);
-            if (m_binding03.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding03.inputAxis)) m_bindings.Add(m_binding03);
-            if (m_binding04.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding04.inputAxis)) m_bindings.Add(m_binding04);
-            if (m_binding05.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding05.inputAxis)) m_bindings.Add(m_binding05);
-            if (m_binding06.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding06.inputAxis)) m_bindings.Add(m_binding06);
-            if (m_binding07.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding07.inputAxis)) m_bindings.Add(m_binding07);
-            if (m_binding08.axisIndex >= 0 && !string.IsNullOrEmpty(m_binding08.inputAxis)) m_bindings.Add(m_binding08);
         }
 
         private void Update()
         {
-            foreach (var b in m_bindings)
+            if (m_runtimeControl == null)
             {
-                m_runtimeControl.Set[b.axisIndex].axisValue = Input.GetAxis(b.inputAxis);
+                return;
             }
+            if (m_binding01.enabled) m_runtimeControl.Set[m_binding01.setIndex].axisValue = Input.GetAxis(m_binding01.inputAxis);
+            if (m_binding02.enabled) m_runtimeControl.Set[m_binding02.setIndex].axisValue = Input.GetAxis(m_binding02.inputAxis);
+            if (m_binding03.enabled) m_runtimeControl.Set[m_binding03.setIndex].axisValue = Input.GetAxis(m_binding03.inputAxis);
+            if (m_binding04.enabled) m_runtimeControl.Set[m_binding04.setIndex].axisValue = Input.GetAxis(m_binding04.inputAxis);
+            if (m_binding05.enabled) m_runtimeControl.Set[m_binding05.setIndex].axisValue = Input.GetAxis(m_binding05.inputAxis);
+            if (m_binding06.enabled) m_runtimeControl.Set[m_binding06.setIndex].axisValue = Input.GetAxis(m_binding06.inputAxis);
+            if (m_binding07.enabled) m_runtimeControl.Set[m_binding07.setIndex].axisValue = Input.GetAxis(m_binding07.inputAxis);
+            if (m_binding08.enabled) m_runtimeControl.Set[m_binding08.setIndex].axisValue = Input.GetAxis(m_binding08.inputAxis);
         }
 
         private void LateUpdate()
         {
-            m_runtimeControl.ApplyBlendShapeControlWeights();
+            m_runtimeControl?.ApplyBlendShapeControlWeights();
+        }
+        
+        public void InitializeRuntimeControl()
+        {
+            if (m_controlMap != null)
+            {
+                m_runtimeControl = new BlendShapeRuntimeControl(gameObject, m_controlMap, m_ensureMeshNameMatch);
+            }
         }
     }
 }

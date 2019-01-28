@@ -8,10 +8,10 @@ using System.Xml.Schema;
 
 namespace Vox.Blend {
 
-	[CustomEditor(typeof(BlendShapeController))]
-	public class BlendShapeControllerEditor : Editor {
+	[CustomEditor(typeof(BlendShapeInteractiveController))]
+	public class BlendShapeInteractiveControllerEditor : Editor {
 
-		private BlendShapeController m_currentTarget;
+		private BlendShapeInteractiveController m_currentTarget;
 		private BlendShapeControlMapAsset m_currentAsset;
 		private string[] m_setNames;
 		private GUIContent m_empty;
@@ -26,14 +26,14 @@ namespace Vox.Blend {
 		private SerializedProperty m_prop_b06_setIndex = null;
 		private SerializedProperty m_prop_b07_setIndex = null;
 		private SerializedProperty m_prop_b08_setIndex = null;
-		private SerializedProperty m_prop_b01_value = null;
-		private SerializedProperty m_prop_b02_value = null;
-		private SerializedProperty m_prop_b03_value = null;
-		private SerializedProperty m_prop_b04_value = null;
-		private SerializedProperty m_prop_b05_value = null;
-		private SerializedProperty m_prop_b06_value = null;
-		private SerializedProperty m_prop_b07_value = null;
-		private SerializedProperty m_prop_b08_value = null;
+		private SerializedProperty m_prop_b01_inputAxis = null;
+		private SerializedProperty m_prop_b02_inputAxis = null;
+		private SerializedProperty m_prop_b03_inputAxis = null;
+		private SerializedProperty m_prop_b04_inputAxis = null;
+		private SerializedProperty m_prop_b05_inputAxis = null;
+		private SerializedProperty m_prop_b06_inputAxis = null;
+		private SerializedProperty m_prop_b07_inputAxis = null;
+		private SerializedProperty m_prop_b08_inputAxis = null;
 		private SerializedProperty m_prop_b01_enabled = null;
 		private SerializedProperty m_prop_b02_enabled = null;
 		private SerializedProperty m_prop_b03_enabled = null;
@@ -45,7 +45,7 @@ namespace Vox.Blend {
 
 		private void ResetEditor()
 		{
-			m_currentTarget = target as BlendShapeController;
+			m_currentTarget = target as BlendShapeInteractiveController;
 			
 			m_prop_controlMap = serializedObject.FindProperty("m_controlMap");
 			m_prop_ensureMeshNameMatch = serializedObject.FindProperty("m_ensureMeshNameMatch");
@@ -57,14 +57,14 @@ namespace Vox.Blend {
 			m_prop_b06_setIndex = serializedObject.FindProperty("m_binding06.setIndex");
 			m_prop_b07_setIndex = serializedObject.FindProperty("m_binding07.setIndex");
 			m_prop_b08_setIndex = serializedObject.FindProperty("m_binding08.setIndex");
-			m_prop_b01_value = serializedObject.FindProperty("m_binding01.value");
-			m_prop_b02_value = serializedObject.FindProperty("m_binding02.value");
-			m_prop_b03_value = serializedObject.FindProperty("m_binding03.value");
-			m_prop_b04_value = serializedObject.FindProperty("m_binding04.value");
-			m_prop_b05_value = serializedObject.FindProperty("m_binding05.value");
-			m_prop_b06_value = serializedObject.FindProperty("m_binding06.value");
-			m_prop_b07_value = serializedObject.FindProperty("m_binding07.value");
-			m_prop_b08_value = serializedObject.FindProperty("m_binding08.value");
+			m_prop_b01_inputAxis = serializedObject.FindProperty("m_binding01.inputAxis");
+			m_prop_b02_inputAxis = serializedObject.FindProperty("m_binding02.inputAxis");
+			m_prop_b03_inputAxis = serializedObject.FindProperty("m_binding03.inputAxis");
+			m_prop_b04_inputAxis = serializedObject.FindProperty("m_binding04.inputAxis");
+			m_prop_b05_inputAxis = serializedObject.FindProperty("m_binding05.inputAxis");
+			m_prop_b06_inputAxis = serializedObject.FindProperty("m_binding06.inputAxis");
+			m_prop_b07_inputAxis = serializedObject.FindProperty("m_binding07.inputAxis");
+			m_prop_b08_inputAxis = serializedObject.FindProperty("m_binding08.inputAxis");
 			m_prop_b01_enabled = serializedObject.FindProperty("m_binding01.enabled");
 			m_prop_b02_enabled = serializedObject.FindProperty("m_binding02.enabled");
 			m_prop_b03_enabled = serializedObject.FindProperty("m_binding03.enabled");
@@ -113,7 +113,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b01_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b01_setIndex.intValue) m_prop_b01_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b01_value, m_empty);					
+						EditorGUILayout.DelayedTextField(m_prop_b01_inputAxis, m_empty);					
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -123,7 +123,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b02_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b02_setIndex.intValue) m_prop_b02_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b02_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b02_inputAxis, m_empty);
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -133,7 +133,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b03_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b03_setIndex.intValue) m_prop_b03_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b03_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b03_inputAxis, m_empty);
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -143,7 +143,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b04_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b04_setIndex.intValue) m_prop_b04_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b04_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b04_inputAxis, m_empty);
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -153,7 +153,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b05_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b05_setIndex.intValue) m_prop_b05_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b05_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b05_inputAxis, m_empty);
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -163,7 +163,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b06_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b06_setIndex.intValue) m_prop_b06_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b06_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b06_inputAxis, m_empty);
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -173,7 +173,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b07_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b07_setIndex.intValue) m_prop_b07_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b07_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b07_inputAxis, m_empty);
 					}
 				}
 				using (new EditorGUILayout.HorizontalScope())
@@ -183,7 +183,7 @@ namespace Vox.Blend {
 					{
 						var idx = EditorGUILayout.Popup(m_prop_b08_setIndex.intValue, m_setNames);
 						if (idx != m_prop_b08_setIndex.intValue) m_prop_b08_setIndex.intValue = idx;
-						EditorGUILayout.DelayedFloatField(m_prop_b08_value, m_empty);
+						EditorGUILayout.DelayedTextField(m_prop_b08_inputAxis, m_empty);
 					}
 				}
 			}

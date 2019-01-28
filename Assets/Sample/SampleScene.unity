@@ -269,22 +269,22 @@ Prefab:
     - target: {fileID: 137489954890728542, guid: d1ab19eeeb6d93848b1324707001cf3f,
         type: 2}
       propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
+      value: 52.807617
       objectReference: {fileID: 0}
     - target: {fileID: 137730801609767424, guid: d1ab19eeeb6d93848b1324707001cf3f,
         type: 2}
       propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
+      value: 52.807617
       objectReference: {fileID: 0}
     - target: {fileID: 137822133330408206, guid: d1ab19eeeb6d93848b1324707001cf3f,
         type: 2}
       propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
+      value: 52.807617
       objectReference: {fileID: 0}
     - target: {fileID: 137191537801163838, guid: d1ab19eeeb6d93848b1324707001cf3f,
         type: 2}
       propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
+      value: 52.807617
       objectReference: {fileID: 0}
     - target: {fileID: 137489954890728542, guid: d1ab19eeeb6d93848b1324707001cf3f,
         type: 2}
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_binding01:
     enabled: 1
     setIndex: 0
-    value: 0
+    value: 0.5280762
   m_binding02:
     enabled: 1
     setIndex: 1
@@ -399,6 +399,51 @@ MonoBehaviour:
     enabled: 0
     setIndex: 0
     value: 0
+--- !u!114 &244123588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244123586}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5d947c0ea3f47759877b670267c413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_controlMap: {fileID: 11400000, guid: b04e036fa7fc2440da814bc2e6956dd5, type: 2}
+  m_ensureMeshNameMatch: 1
+  m_binding01:
+    enabled: 1
+    setIndex: 0
+    inputAxis: Horizontal
+  m_binding02:
+    enabled: 1
+    setIndex: 2
+    inputAxis: Vertical
+  m_binding03:
+    enabled: 0
+    setIndex: 0
+    inputAxis: 
+  m_binding04:
+    enabled: 0
+    setIndex: 0
+    inputAxis: 
+  m_binding05:
+    enabled: 0
+    setIndex: 0
+    inputAxis: 
+  m_binding06:
+    enabled: 0
+    setIndex: 0
+    inputAxis: 
+  m_binding07:
+    enabled: 0
+    setIndex: 0
+    inputAxis: 
+  m_binding08:
+    enabled: 0
+    setIndex: 0
+    inputAxis: 
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +568,7 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 114820981908286796, guid: cdcccba9365ee45309d58e06dc8c830a, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 244123587}
   m_ExposedReferences:
     m_References:
     - a5407a452135946989214e88388dce54: {fileID: 0}
