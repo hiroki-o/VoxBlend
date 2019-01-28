@@ -61,9 +61,12 @@ namespace Vox.Blend
             }
 
             m_foldouts = new List<bool>();
-            foreach (var s in asset.ControlSets)
+            if (asset.ControlSets != null)
             {
-                m_foldouts.Add(false);
+                foreach (var s in asset.ControlSets)
+                {
+                    m_foldouts.Add(false);
+                }
             }
         }
 
