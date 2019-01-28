@@ -1,7 +1,7 @@
 # VoxBlend
 A BlendShape Controller Unity plugin.
 
-(Top)[Docs/top.gif]
+!(Top)[/Docs/top.gif]
 
 VoxBlend enables to control multiple blendshapes in one dimentional animation curve by using reusable BlendShapeControlMap asset. It is also compatible with Timeline in Unity.
 
