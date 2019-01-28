@@ -18,6 +18,7 @@ namespace Vox.Blend
 //		}
 
         private BlendShapeControlMapAsset m_currentTarget;
+        private SerializedProperty m_prop_targetModel;
         private string[] m_meshNames;
         private List<string[]> m_blendShapeNames;
         private List<bool> m_foldouts;
@@ -33,9 +34,12 @@ namespace Vox.Blend
         private void ResetEditor(BlendShapeControlMapAsset asset)
         {
             m_currentTarget = asset;
-            if (asset.TargetModel != null)
+            m_prop_targetModel = serializedObject.FindProperty("m_targetModel");
+            
+            if (m_prop_targetModel.objectReferenceValue != null)
             {
-                var renderers = asset.TargetModel.GetComponentsInChildren<SkinnedMeshRenderer>();
+                var targetModel = m_prop_targetModel.objectReferenceValue as GameObject;
+                var renderers = targetModel.GetComponentsInChildren<SkinnedMeshRenderer>();
                 m_meshNames = renderers.Where(r => r.sharedMesh.blendShapeCount > 0).Select(r => r.sharedMesh.name)
                     .ToArray();
                 m_blendShapeNames = new List<string[]>();
@@ -65,10 +69,7 @@ namespace Vox.Blend
 
         public override void OnInspectorGUI()
         {
-//			if (s_styles == null)
-//			{
-//				s_styles = new Styles();
-//			}
+            serializedObject.Update();
 
             var asset = target as BlendShapeControlMapAsset;
 
@@ -78,11 +79,11 @@ namespace Vox.Blend
             }
 
             var model = asset.TargetModel;
-            var newModel = EditorGUILayout.ObjectField("Target Model", model, typeof(GameObject), false) as GameObject;
-            if (newModel != model)
+            EditorGUILayout.PropertyField(m_prop_targetModel, new GUIContent("Target Model"), false);
+            serializedObject.ApplyModifiedProperties();
+            if (GUI.changed)
             {
-                asset.Reset(newModel);
-                EditorUtility.SetDirty(asset);
+                asset.Reset(m_prop_targetModel.objectReferenceValue as GameObject);
                 ResetEditor(asset);
             }
 

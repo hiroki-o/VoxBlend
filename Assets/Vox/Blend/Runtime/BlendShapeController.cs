@@ -25,8 +25,8 @@ namespace Vox.Blend
                 setIndex = index;
                 value = v;
             }
-        } 
-        
+        }
+
         [SerializeField] private BlendShapeControlMapAsset m_controlMap = null;
         [SerializeField] private bool m_ensureMeshNameMatch = true;
 
@@ -43,44 +43,58 @@ namespace Vox.Blend
 
         public float Value01
         {
-            set => m_binding01.value = value;
+            set { m_binding01.value = value; }
         }
+
         public float Value02
         {
-            set => m_binding02.value = value;
+            set { m_binding02.value = value; }
         }
+
         public float Value03
         {
-            set => m_binding03.value = value;
+            set { m_binding03.value = value; }
         }
+
         public float Value04
         {
-            set => m_binding04.value = value;
+            set { m_binding04.value = value; }
         }
+
         public float Value05
         {
-            set => m_binding05.value = value;
+            set { m_binding05.value = value; }
         }
+
         public float Value06
         {
-            set => m_binding06.value = value;
+            set { m_binding06.value = value; }
         }
+
         public float Value07
         {
-            set => m_binding07.value = value;
+            set { m_binding07.value = value; }
         }
+
         public float Value08
         {
-            set => m_binding08.value = value;
+            set { m_binding08.value = value; }
         }
 
         private void Start()
         {
-            m_runtimeControl = new BlendShapeRuntimeControl(gameObject, m_controlMap, m_ensureMeshNameMatch);
+            if (m_controlMap != null)
+            {
+                m_runtimeControl = new BlendShapeRuntimeControl(gameObject, m_controlMap, m_ensureMeshNameMatch);
+            }
         }
 
         private void Update()
         {
+            if (m_runtimeControl == null)
+            {
+                return;
+            }
             if (m_binding01.enabled) m_runtimeControl.Set[m_binding01.setIndex].axisValue = m_binding01.value;
             if (m_binding02.enabled) m_runtimeControl.Set[m_binding02.setIndex].axisValue = m_binding02.value;
             if (m_binding03.enabled) m_runtimeControl.Set[m_binding03.setIndex].axisValue = m_binding03.value;
@@ -93,7 +107,10 @@ namespace Vox.Blend
 
         public void InitializeRuntimeControl()
         {
-            m_runtimeControl = new BlendShapeRuntimeControl(gameObject, m_controlMap, m_ensureMeshNameMatch);
+            if (m_controlMap != null)
+            {
+                m_runtimeControl = new BlendShapeRuntimeControl(gameObject, m_controlMap, m_ensureMeshNameMatch);
+            }
         }
 
         private void LateUpdate()

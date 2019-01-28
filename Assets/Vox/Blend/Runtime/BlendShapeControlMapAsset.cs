@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Vox.Blend
 {
@@ -83,17 +81,11 @@ namespace Vox.Blend
         }
 
         [SerializeField] private GameObject m_targetModel = null;
-        [FormerlySerializedAs("controlSet")] [FormerlySerializedAs("m_controlAxisList")] [SerializeField] private List<BlendShapeControlSet> controlSets = null;
+        [SerializeField] private List<BlendShapeControlSet> controlSets = null;
 
         // Properties (Get)
         public List<BlendShapeControlSet> ControlSets => controlSets;
         public GameObject TargetModel => m_targetModel;
-        
-
-        private void OnEnable()
-        {
-            Reset(null);
-        }
 
         public void Reset(GameObject target)
         {
