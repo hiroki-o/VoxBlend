@@ -1,1 +1,8 @@
-{    "name": "jp.hiroki-o.voxblend",    "displayName": "VoxBlend",    "version": "0.1.0",    "unity": "2018.2",    "description": "A BlendShape Controller Unity plugin.",    "dependencies": { "com.unity.timeline": "1.1.0" }}
+{
+    "name": "jp.hiroki-o.voxblend",
+    "displayName": "VoxBlend",
+    "version": "0.1.0",
+    "unity": "2018.2",
+    "description": "A BlendShape Controller Unity plugin",
+    "dependencies": { "com.unity.timeline": "1.1.0" }
+}
