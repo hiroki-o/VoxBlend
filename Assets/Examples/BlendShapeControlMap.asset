@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4f029cc38d8425fb2110ce09937ec5, type: 3}
+  m_Name: BlendShapeControlMap
+  m_EditorClassIdentifier: 
+  m_targetModel: {fileID: 100326, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+  controlSets:
+  - m_name: Smile1
+    m_controls:
+    - m_meshName: BLW_DEF
+      m_blendShapeName: blendShape3.BLW_SMILE1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EYE_DEF
+      m_blendShapeName: blendShape2.EYE_SMILE1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EL_DEF
+      m_blendShapeName: blendShape2.EYE_SMILE1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: MTH_DEF
+      m_blendShapeName: blendShape1.MTH_SMILE1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+  - m_name: Angry1
+    m_controls:
+    - m_meshName: BLW_DEF
+      m_blendShapeName: blendShape3.BLW_ANG1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EYE_DEF
+      m_blendShapeName: blendShape2.EYE_ANG1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EL_DEF
+      m_blendShapeName: blendShape2.EYE_ANG1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: MTH_DEF
+      m_blendShapeName: blendShape1.MTH_ANG1
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+  - m_name: Angry2
+    m_controls:
+    - m_meshName: BLW_DEF
+      m_blendShapeName: blendShape3.BLW_ANG2
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EYE_DEF
+      m_blendShapeName: blendShape2.EYE_ANG2
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EL_DEF
+      m_blendShapeName: blendShape2.EYE_ANG2
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: MTH_DEF
+      m_blendShapeName: blendShape1.MTH_ANG2
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+  - m_name: Confused1
+    m_controls:
+    - m_meshName: BLW_DEF
+      m_blendShapeName: blendShape3.BLW_CONF
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EYE_DEF
+      m_blendShapeName: blendShape2.EYE_CONF
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: EL_DEF
+      m_blendShapeName: blendShape2.EYE_CONF
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0
+    - m_meshName: MTH_DEF
+      m_blendShapeName: blendShape1.MTH_CONF
+      m_range: {x: 0, y: 100}
+      m_defaultValue: 0

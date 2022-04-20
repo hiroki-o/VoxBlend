@@ -1,0 +1,12 @@
+{
+  "displayName": "VoxBlend",
+  "name": "jp.hiroki-o.vox.blend",
+  "unity": "2021.3",
+  "version": "1.0.1-preview",
+  "dependencies": {
+  }, 
+  "description": "A BlendShape Controller Unity plugin.",
+  "contributors": [
+        "Hiroki Omae <hiroki@unity3d.com> (https://github.com/hiroki-o)"
+  ]  
+}

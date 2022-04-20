@@ -1,0 +1,28 @@
+{
+    "name": "VoxBlend",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f06555f75b070af458a003d92f9efb00",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.timeline",
+            "expression": "1.6.2",
+            "define": "UNITY_TIMELINE_ENABLED"
+        },
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.3.0",
+            "define": "UNITY_INPUTSYSTEM_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

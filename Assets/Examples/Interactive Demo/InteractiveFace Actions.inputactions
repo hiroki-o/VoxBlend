@@ -1,0 +1,74 @@
+{
+    "name": "InteractiveFace Actions",
+    "maps": [
+        {
+            "name": "FaceControl",
+            "id": "b6c3afd8-4482-448e-972c-3b2c8534b604",
+            "actions": [
+                {
+                    "name": "Smiley",
+                    "type": "Value",
+                    "id": "e1f920d5-f5a5-4e33-91b5-746f35985eb0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Angry",
+                    "type": "Button",
+                    "id": "07969bec-d1ed-407e-a31b-dc7031838d9f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Angry2",
+                    "type": "Button",
+                    "id": "4567f674-7b1e-4479-8f47-d44739456650",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "15ad11c1-fb28-4766-b7e6-84dee865c24b",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Smiley",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4852ad85-8ed7-4ea7-bbc3-06ad4c26bf25",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Angry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43560887-ddb1-46df-a53e-717a072eb6c3",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Angry2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
